@@ -1,0 +1,112 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <meta name="description" content="Makka Pakka's Awesome Website">
+        <meta name="keywords" content="In the night garden, Makka Pakka">
+        <meta name="author" content="Charlie Clift">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <script type="text/javascript" src="bundle.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <script>
+            //show login elements
+            document.getElementById("login").classList.remove('hide');
+        </script>                  
+    </head>
+    <body class="colour-background">
+        <title>Makka Pakka</title>
+        <div id="button" class="hide">
+        <button id="btnHome" class="menu left"  onclick="home();">Home</button>
+        <button id="btnScratch" class="menu middle"  onclick="scratch();">Scratch Projects</button>
+        <button id="btnSponsors" class="menu middle"  onclick="sponsors();">Sponsors</button>
+        <button id="btnVideos" class="menu middle"  onclick="videos();">Videos</button>
+        <button id="btnEpisodes" class="menu middle"  onclick="episodes();">Episodes</button>
+        <button id="btnLogout" class="menu right" onclick="logout();">Logout</button> 
+        </div>
+        <div class="pages-container">
+            <div class="page-container"> 
+            <iframe scrolling="no" id="login" src="login.html" height="900px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <div class="page-container"> 
+            <iframe scrolling="no" id="videos" src="videos.html" height="3800px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <div class="page-container"> 
+            <iframe scrolling="no" id="home" src="home.html" height="200px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <div class="page-container"> 
+            <iframe scrolling="no" id="sponsors" src="sponsors.html" height="2750px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <div class="page-container"> 
+            <iframe scrolling="no" id="scratch" src="scratch.html" height="2000px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <div class="page-container"> 
+            <iframe scrolling="no" id="episodes" src="episodes.html" height="4000px" frameborder="0" class="hide page"></iframe>
+            </div>
+            <script type="text/javascript">
+                var current = "home"
+                function home() {
+                    document.getElementById(current).classList.add('hide');
+                    document.getElementById("home").classList.remove('hide');
+                    document.getElementById("btnHome").classList.add('active');
+                    //document.getElementById("btn"+current).classList.remove('active');
+                    current = "home";
+                    document.title = "Makka Pakka - Home";
+                }
+                function scratch() {
+                    document.getElementById(current).classList.add('hide');
+                    document.getElementById("scratch").classList.remove('hide');
+                    document.getElementById("btnScratch").classList.add('active');
+                    //document.getElementById("btn"+current).classList.remove('active');
+                    current = "scratch";
+                    document.title = "Makka Pakka - Scratch";
+                }
+                function videos() {
+                    document.getElementById(current).classList.add('hide');
+                    document.getElementById("videos").classList.remove('hide');
+                    document.getElementById("btnVideos").classList.add('active');
+                    //document.getElementById("btn"+current).classList.remove('active');
+                    current = "videos";
+                    document.title = "Makka Pakka - Videos";
+                }
+                function sponsors() {
+                    document.getElementById(current).classList.add('hide');
+                    document.getElementById("sponsors").classList.remove('hide');
+                    document.getElementById("btnSponsors").classList.add('active');
+                    //document.getElementById("btn"+current).classList.remove('active');
+                    current = "sponsors";
+                    document.title = "Makka Pakka - Sponsors";
+                }
+                function episodes() {
+                    document.getElementById(current).classList.add('hide');
+                    document.getElementById("episodes").classList.remove('hide');
+                    document.getElementById("btnEpisodes").classList.add('active');
+                    //document.getElementById("btn"+current).classList.remove('active');
+                    current = "episodes";
+                    document.title = "Makka Pakka - Episodes";
+                }
+                function login() {
+                    document.getElementById("button").classList.remove('hide');
+                }
+                function logout() {
+                    document.getElementById("button").classList.add('hide');
+                    document.getElementById("loggedin").classList.add('hide');
+                    document.getElementById("login").classList.remove('hide');
+                    location.reload(true);
+                }
+            </script>    
+        <script type="text/javascript" src="bundle.js"></script>
+        <script type="text/javascript" src="height.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.24.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+    </body>
+</html>

@@ -1,0 +1,171 @@
+            <script>
+            iFrameResize({
+                log                     : true,                  Enable console logging
+                enablePublicMethods     : true,                  Enable methods within iframe hosted page
+                heightCalculationMethod : 'lowestElement',
+            });
+
+                const iframes = iFrameResize( [{options}], [css, selector] || [iframe] );
+                iFrameResize({ log: true }, '#scratch')
+              </script>              
+        </div>
+        <script>
+            function stuff() {
+                alert(document.getElementById("myImg").style.height);
+            }
+        </script>
+        <script>
+            iFrameResize({ log: true }, '#login')
+            iFrameResize({ log: true }, '#videos')
+            iFrameResize({ log: true }, '#home')
+            iFrameResize({ log: true }, '#sponsors')
+            iFrameResize({ log: true }, '#scratch')
+            iFrameResize({ log: true }, '#episodes')
+        </script>
+        <script>
+            //login
+            var login = document.getElementById("login");
+            login.onload = function(){
+            login.style.height = login.contentWindow.document.body.scrollHeight + 'px';
+            }
+            //videos
+            var video = document.getElementById("videos");
+            video.onload = function(){
+            video.style.height = video.contentWindow.document.body.scrollHeight + 'px';
+            }
+            //home
+            var homa = document.getElementById("home");
+            homa.onload = function(){
+            homa.style.height = homa.contentWindow.document.body.scrollHeight + 'px';
+            }
+            //sponsors
+            var sponsor = document.getElementById("sponsors");
+            sponsor.onload = function(){
+            sponsor.style.height = sponsor.contentWindow.document.body.scrollHeight + 'px';
+            }
+            //scratch
+            var scratches = document.getElementById("scratch");
+            scratches.onload = function(){
+            scratches.style.height = scratches.contentWindow.document.body.scrollHeight + 'px';
+            }
+            //episodes
+            var episode = document.getElementById("episodes");
+            episode.onload = function(){
+            episode.style.height = episode.contentWindow.document.body.scrollHeight + 'px';
+            }
+        </script>
+          
+        <script type="text/javascript">
+            function getDocHeight(doc) {
+                doc = doc || document;
+                // stackoverflow.com/questions/1145850/
+                var body = doc.body, html = doc.documentElement;
+                var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                    html.clientHeight, html.scrollHeight, html.offsetHeight );
+                return height;
+            }
+            
+            function setIframeHeight(id) {
+                var scratch = document.getElementById(id);
+                var doc = scratch.contentDocument? scratch.contentDocument: 
+                    scratch.contentWindow.document;
+                scratch.style.visibility = 'hidden';
+                scratch.style.height = "10px"; // reset to minimal height ...
+                // IE opt. for bing/msn needs a bit added or scrollbar appears
+                scratch.style.height = getDocHeight( doc ) + 4 + "px";
+                scratch.style.visibility = 'visible';
+            }
+            
+            document.getElementById('scratch').onload = function() { // Adjust the Id accordingly
+                setIframeHeight(this.id);
+            }
+            </script>
+            <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+            <script type='text/javascript'>
+                
+                $(function(){
+                
+                    var iFrames = $('menu');
+                  
+                    function iResize() {
+                    
+                        for (var i = 0, j = iFrames.length; i < j; i++) {
+                          iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';}
+                        }
+                        
+                        if ($.browser.safari || $.browser.opera) { 
+                        
+                           iFrames.load(function(){
+                               setTimeout(iResize, 0);
+                           });
+                        
+                           for (var i = 0, j = iFrames.length; i < j; i++) {
+                                var iSource = iFrames[i].src;
+                                iFrames[i].src = '';
+                                iFrames[i].src = iSource;
+                           }
+                           
+                        } else {
+                           iFrames.load(function() { 
+                               this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
+                           });
+                        }
+                    
+                    });
+            
+            </script>
+
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script type="text/javascript" src="iframeResizer.min.js"></script> 
+            <script type="text/javascript">
+    
+                iFrameResize({
+                    log                     : true,                  // Enable console logging
+                    enablePublicMethods     : true,                  // Enable methods within iframe hosted page
+                    resizedCallback         : function(messageData){ // Callback fn when resize is received
+                        $('p#callback').html(
+                            '<b>Frame ID:</b> '    + messageData.iframe.id +
+                            ' <b>Height:</b> '     + messageData.height +
+                            ' <b>Width:</b> '      + messageData.width + 
+                            ' <b>Event type:</b> ' + messageData.type
+                        );
+                    },
+                    messageCallback         : function(messageData){ // Callback fn when message is received
+                        $('p#callback').html(
+                            '<b>Frame ID:</b> '    + messageData.iframe.id +
+                            ' <b>Message:</b> '    + messageData.message
+                        );
+                        alert(messageData.message);
+                    },
+                    closedCallback         : function(id){ // Callback fn when iFrame is closed
+                        $('p#callback').html(
+                            '<b>IFrame (</b>'    + id +
+                            '<b>) removed from page.</b>'
+                        );
+                    }
+                });
+    
+    
+            </script>
+
+        <script type="text/javascript">
+            //MDN PolyFil for IE8 (This is not needed if you use the jQuery version)
+            if (!Array.prototype.forEach){
+                Array.prototype.forEach = function(fun /*, thisArg */){
+                "use strict";
+                if (this === void 0 || this === null || typeof fun !== "function") throw new TypeError();
+                
+                var
+                t = Object(this),
+                len = t.length >>> 0,
+                thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+
+                for (var i = 0; i < len; i++)
+                if (i in t)
+                    fun.call(thisArg, t[i], i, t);
+                };
+            }
+        </script> 
+            function resizeIframe(obj) {
+                obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+            }

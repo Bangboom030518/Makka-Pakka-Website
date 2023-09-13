@@ -1,0 +1,184 @@
+h1 {
+    font-family: 'Ranchers', cursive;
+    color: mediumseagreen;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: mediumslateblue;
+    font-size: 75px;
+}
+
+.image-background {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.colour-background {
+    background-image: url("floral\ background.jpg");
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: 100%;
+    position: relative;  
+}
+#button {
+    margin: 5px;
+}
+.submit {
+    border-radius: 10px;
+    size: 20px;
+}
+.container {
+    margin: 0;
+    width: inherit;
+}
+.hide {
+    display: none;
+}
+
+.textfield{
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    font-family: 'Indie Flower', cursive;
+    color: 377369;
+    border-bottom: 2px solid #377369;
+}
+
+.signup {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #733741;
+    width: 3;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.btn {
+    background-color: #377369;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    font-family: 'Indie Flower', cursive;
+    color: #733741;
+    font-weight: bolder;
+    width: 90%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #377369;
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #377369;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #377369;
+}
+
+.centre {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);}
+
+.outer-video {
+    width: 100%
+  }
+.menu {
+    margin: 0;
+    border-color: #377369;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    font-family: 'Indie Flower', cursive;
+    color: #377369;
+    background-color: #733741;
+    font-weight: 700;
+    width: 100%;
+}
+#btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #733741;
+    border-radius: 5px;
+    padding: 5px;
+    width: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.menu:hover {
+    font-weight: 900;
+    background-color: #377369;
+    color: #733741;
+    border-color: #377369;
+}
+.middle {
+    border-right: 1px solid #377369;
+}
+.left {
+    border-right: 1px solid #377369;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 2px solid #377369;
+}
+.right {
+    border-right: 2px solid #377369;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.page {
+    width: inherit;
+    overflow-x: hidden;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.description-container {
+    float: right;
+    width: 500px;
+    margin: 25px;
+    border-radius: 5px;
+}
+h2 {
+    text-decoration: underline;
+    font-family: 'Grandstander', cursive;
+    font-size: 50px;
+    color: #377369;
+}
+.box {
+    margin: 25px;
+}
+.description {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    color: #733741;
+}
+body, html {
+    width: inherit;
+    overflow-x: hidden;
+}
+.page-container {
+    width: 100%;
+}
+.pages-container {
+    width: inherit;
+}
